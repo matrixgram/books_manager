@@ -4,11 +4,11 @@
 def is_pdf_file(path: str) -> bool:
     """
 
-    :param path: str: 
+    :param path: str:
     :returns: 4 bytes %PDF
     references:
         https://en.wikipedia.org/wiki/PDF
-    
+
         todo:
             file exist
             path exist
@@ -21,7 +21,7 @@ def is_pdf_file(path: str) -> bool:
 def find_ISBN(path) -> str:
     """
 
-    :param path: 
+    :param path:
 
     """
     from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpereter
@@ -57,7 +57,7 @@ def find_ISBN(path) -> str:
 def convert_pdf_to_txt(path):
     """
 
-    :param path: 
+    :param path:
 
     """
     from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -100,4 +100,6 @@ if "__main__" == __name__:
     import sys
 
     # print(is_pdf_file(sys.argv[1]))
-    print(convert_pdf_to_txt(sys.argv[1]))
+    import pdfplumber
+
+    pdf = pdfplumber.open("a/home/matrixgram/Documents/ISBN/9780262033848.pdf")
